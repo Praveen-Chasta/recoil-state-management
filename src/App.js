@@ -1,24 +1,24 @@
-import logo from './logo.svg';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './component/Navbar';
 import './App.css';
+import Create from './component/Create';
+import Cards from './component/Cards';
+import { RecoilRoot } from 'recoil';
+import { Toaster } from 'react-hot-toast';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <RecoilRoot>
+    <Toaster />
+      <Router>
+        <Navbar />
+        <Routes>
+            <Route path = "/create" element = {<Create/>} />
+            <Route path="/cards" element = {<Cards/>}/>
+        </Routes>
+      </Router>
+    </RecoilRoot>
   );
 }
 
