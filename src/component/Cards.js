@@ -1,8 +1,11 @@
-import React from 'react'
+import Filter from './Filter'
 
 function Cards() {
   return (
-    <div>Cards</div>
+    <div>
+        <Filter />
+        Cards
+    </div>
   )
 }
 
