@@ -6,7 +6,7 @@ function Filter() {
 
   const [filter, setFilters] = useRecoilState(filterState)
   const [search, setSearch] = useState("")
-  const [debounce, setDebounced] = useState(search)
+  const [debounce, setDebounced] = useState('')
 
   useEffect(() => {
     const value = setTimeout(() => {
